@@ -10,7 +10,6 @@
   import $ from 'jquery'
   import child from './Child.vue'
   //父模板中传入data数据，显示，修改数据
-  require('../assets/hello.js')
   export default {
     name : 'components',
     props : [],
