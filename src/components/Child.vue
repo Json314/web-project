@@ -1,11 +1,13 @@
 <template lang="html">
   <div class="">
 
-    <div class="row">
-      <div class="col-sm-4">
-        <div v-for="item in list" :key="item">{{item}}</div>
+    <div class="row child-container">
+      <div class="col-sm-4 left">
+        <div class="list-container">
+          <div v-for="item in list" :key="item">{{item}}</div>
+        </div>
       </div>
-      <div class="col-sm-8">
+      <div class="col-sm-8 right">
         <form class="form-horizontal">
           <div class="form-group">
             <label for="values" class="col-sm-2 control-label">文本</label>
@@ -15,7 +17,7 @@
           </div>
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-              <button class="btn btn-default" @click="confirmAdd">确认添加</button>
+              <button class="btn btn-default" @click.prevent="confirmAdd">确认添加</button>
             </div>
           </div>
         </form>
@@ -54,5 +56,20 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss" scope>
+  .child-container{
+    height: 300px;
+    border: 1px solid #ccc;
+    .left{
+      height: 100%;
+      border-right: 1px solid #ccc;
+      .list-container{
+        height: 100%;
+        overflow-y: auto;
+      }
+    }
+    .left,.right{
+      padding: 15px;
+    }
+  }
 </style>

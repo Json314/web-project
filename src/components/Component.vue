@@ -1,7 +1,8 @@
 <template lang="html">
   <div class="">
     <h1>组件之间的数据传递</h1>
-    <router-link :to="{name:'Hello'}">Hello</router-link>
+    <br>
+    <!-- <router-link :to="{name:'Hello'}">Hello</router-link> -->
     <child data="hello"></child>
   </div>
 </template>
