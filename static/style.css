@@ -1,3 +1,7 @@
 body{
   background-color: #fafafa;
 }
+.line{
+  border-top: 1px dashed #ccc;
+  margin: 15px 0;
+}
