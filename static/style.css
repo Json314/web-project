@@ -5,3 +5,6 @@ body{
   border-top: 1px dashed #ccc;
   margin: 15px 0;
 }
+a:focus, a:hover{
+  color: #31AAB2;
+}

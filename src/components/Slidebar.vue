@@ -122,7 +122,7 @@
     // display: none;
     position: absolute;
     left: 20px;
-    top: 10px;
+    top: 8px;
     width: 30px;
     height: 40px;
     padding: 10px 5px;

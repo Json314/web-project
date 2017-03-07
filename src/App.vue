@@ -3,19 +3,22 @@
     <slide-bar></slide-bar>
     <nav-bar></nav-bar>
     <router-view class="container"></router-view>
+    <my-footer></my-footer>
   </div>
 </template>
 
 <script>
 import navBar from './components/Nav.vue';
 import slideBar from './components/Slidebar.vue';
+import myFooter from './components/Footer.vue';
 import store from './store/store.js';
 export default {
   name: 'app',
   store,
   components :{
     navBar,
-    slideBar
+    slideBar,
+    myFooter
   }
 }
 </script>
