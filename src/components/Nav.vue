@@ -47,7 +47,19 @@ export default {
     focusin : function(event){    //input获取焦点
       $(event.target).addClass('active');
       // console.log(this.$route.params);
+      return;
+      //改变路由
       // this.$router.push('/hello');
+      //提示消息
+      noty({
+              text        : '欢迎来到拉不拉卡的首页',
+              type        : 'success',  // success, error, warning, information, notification
+              dismissQueue: true,
+              // timeout: true,
+              closeWith: ['click'], // ['click', 'button', 'hover', 'backdrop'] // backdrop click will close all notifications
+              layout      : 'topRight',
+              theme       : 'defaultTheme'
+          });
     },
     focusout : function(event){   //input失去焦点
       $(event.target).removeClass('active');

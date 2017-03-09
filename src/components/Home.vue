@@ -416,15 +416,34 @@
     width:100%;
     position: relative;
     .label{
-      z-index: 9999;
+      color:#fff;
+      padding: 0 8px;
+      line-height: 20px;
+      border-radius: 3px;
+      height:20px;
+      position: absolute;
+      top:16px;
+      left: 16px;
+      z-index: 999;
     }
     .mask{
+      filter: alpha(opacity=20);
+      position: absolute;
+      left: 0;
+      top:0;
+      bottom: 0;
+      right: 0;
       transition: all 0.3s linear;
-      background: -webkit-linear-gradient(top, #eee, #333);
-      background: -ms-linear-gradient(top, #eee, #333);
+      background-color: rgba(0,0,0,.2);
+      opacity: .2;
     }
     .drift{
-      z-index: 9999;
+      width: 90%;
+      max-width: 449px;
+      position: absolute;
+      left: 5%;
+      top: 64%;
+      z-index: 999;
       transition: all 0.3s linear;
       transition-timing-function: cubic-bezier(.25, .1, .25, 1);
       .abs{
@@ -436,40 +455,31 @@
     }
   }
 
+  .enterblock a::before{
+    width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      background-color: rgba(0,0,0,0);
+      background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(#000));
+      background: -ms-linear-gradient(top, rgba(0,0,0,0), #000);
+      opacity: 0.7;
+      content: " ";
+  }
 
   .enterblock a:hover{
     text-decoration: none;
     .mask{
-      background: -webkit-linear-gradient(top, #aaa, #000);
-      background: -ms-linear-gradient(top, #aaa, #000);
+      opacity: 1;
     }
     .drift{
       top: 20%;
     }
   }
 
-  .enterblock .mask{
-    background-color: #000;
-    background: rgba(0,0,0,.2);
-    filter: alpha(opacity=20);
-    opacity: .7;
-    position: absolute;
-    left: 0;
-    top:0;
-    bottom: 0;
-    right: 0;
-  }
-
-  .enterblock .label{
-    color:#fff;
-    padding: 0 8px;
-    line-height: 20px;
-    border-radius: 3px;
-    height:20px;
-    position: absolute;
-    top:16px;
-    left: 16px;
-  }
 
   .yellowBg{
     background: $hoverColor;
@@ -479,14 +489,6 @@
     height:100%;
     width: 248px;
     overflow: hidden;
-  }
-
-  .enterblock .drift{
-    width: 198px;
-    max-width: 449px;
-    position: absolute;
-    left: 25px;
-    top: 64%;
   }
 
   .drift .title{

@@ -119,7 +119,6 @@
 
   }
   .c-header-navbar__menu{
-    // display: none;
     position: absolute;
     left: 20px;
     top: 8px;
