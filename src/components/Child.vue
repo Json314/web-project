@@ -25,7 +25,9 @@
     <div class="row child-container">
       <div class="col-sm-5 left">
         <div class="list-container">
-          <div class="text-item" v-for="item in list" :key="item">{{item}}</div>
+          <div class="scroll" v-carousel.params="carouselParams">
+            <div class="text-item" v-for="item in list" :key="item">{{item}}</div>
+          </div>
         </div>
       </div>
       <div class="col-sm-7 right">
@@ -71,13 +73,40 @@
 </template>
 
 <script>
+  import Vue from 'vue';
+  /*
+  *跑马灯
+  *父元素必须设定高度，当前元素position为relative
+  *指令传递参数
+  */
+  Vue.directive('carousel',{
+    inserted : function(el , binding , vnode){
+      // console.log(el);
+      $(el).css('position','relative');
+      let carouselParams = binding.value;
+      let top = carouselParams.top;
+      setInterval(function(){
+        if(top == -$(el).height()){
+          top = 300;
+        }else{
+          top--;
+          $(el).css({top:top + 'px'});
+        }
+
+      },carouselParams.speed);
+    }
+  });
   export default {
     name : 'child',
     props : ['data'],
     data () {
       return {
         list : this.data.textList,
-        values : this.data.defaultValue
+        values : this.data.defaultValue,
+        carouselParams : {
+          speed : 10,
+          top : 300
+        }
       }
     },
     computed: {
